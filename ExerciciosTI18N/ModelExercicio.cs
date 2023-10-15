@@ -63,7 +63,7 @@ namespace ExerciciosTI18N
         //calcular e escrever o percentual que cada um representa em relacao ao total 
         //de eleitores
 
-        public double PercentualVotos(int total,int qtVotos)
+        public float PercentualVotos(int total,int qtVotos)
         {
             return (qtVotos / total) * 100;
         }

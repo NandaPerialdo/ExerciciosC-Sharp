@@ -6,3 +6,10 @@ C:\Users\fernanda.palves3\source\repos\ExerciciosTI18N\ExerciciosTI18N\bin\Debug
 C:\Users\fernanda.palves3\source\repos\ExerciciosTI18N\ExerciciosTI18N\bin\Debug\ExerciciosTI18N.pdb
 C:\Users\fernanda.palves3\source\repos\ExerciciosTI18N\ExerciciosTI18N\obj\Debug\ExerciciosTI18N.exe
 C:\Users\fernanda.palves3\source\repos\ExerciciosTI18N\ExerciciosTI18N\obj\Debug\ExerciciosTI18N.pdb
+C:\Users\nanda\Source\Repos\ExerciciosC-Sharp\ExerciciosTI18N\bin\Debug\ExerciciosTI18N.exe.config
+C:\Users\nanda\Source\Repos\ExerciciosC-Sharp\ExerciciosTI18N\bin\Debug\ExerciciosTI18N.exe
+C:\Users\nanda\Source\Repos\ExerciciosC-Sharp\ExerciciosTI18N\bin\Debug\ExerciciosTI18N.pdb
+C:\Users\nanda\Source\Repos\ExerciciosC-Sharp\ExerciciosTI18N\obj\Debug\ExerciciosTI18N.csproj.AssemblyReference.cache
+C:\Users\nanda\Source\Repos\ExerciciosC-Sharp\ExerciciosTI18N\obj\Debug\ExerciciosTI18N.csproj.CoreCompileInputs.cache
+C:\Users\nanda\Source\Repos\ExerciciosC-Sharp\ExerciciosTI18N\obj\Debug\ExerciciosTI18N.exe
+C:\Users\nanda\Source\Repos\ExerciciosC-Sharp\ExerciciosTI18N\obj\Debug\ExerciciosTI18N.pdb

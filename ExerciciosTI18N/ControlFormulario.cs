@@ -112,11 +112,26 @@ namespace ExerciciosTI18N
                         Console.WriteLine("A area do retangulo é" + exercicio.Area(altura, largura));
                         break;
                     case 5:
+                        //coletando dados que serão usados no metodo e guardando em variaveis locais
                         Console.WriteLine("insira o total de eleitores");
                         int total = Convert.ToInt32(Console.ReadLine());
 
-                        Console.WriteLine("insira a quantidade de votos nulos")
+                        Console.WriteLine("insira a quantidade de votos nulos: ");
+                        int qtNulos = Convert.ToInt32(Console.ReadLine());
 
+                        Console.WriteLine("Insira a quantidade de votos brancos: ");
+                        int qtBrancos = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Insira a quantidade de votos válidos");
+                        int qtValidos = Convert.ToInt32(Console.ReadLine());
+
+                        //mostrando resultado, calculado a partir do metodo PercentualVotos criado na aba ModelExercicio
+                        Console.WriteLine("O percuntual de votos nulos é: " + exercicio.PercentualVotos(total, qtNulos));
+
+                        Console.WriteLine("O percuntual de votos nulos é: " + exercicio.PercentualVotos(total, qtBrancos));
+
+                        Console.WriteLine("O percuntual de votos nulos é: " + exercicio.PercentualVotos(total, qtValidos));
+                        break;
                 }//fim do escolha
             } while (ConsultarOpcao != 0);//fim do while
         }//fim do metodo
