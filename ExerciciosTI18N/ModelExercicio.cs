@@ -63,11 +63,31 @@ namespace ExerciciosTI18N
         //calcular e escrever o percentual que cada um representa em relacao ao total 
         //de eleitores
 
-        public float PercentualVotos(int total,int qtVotos)
+        public double PercentualVotos(double total,double qtVotos)
         {
             return (qtVotos / total) * 100;
+        }//fim do metodo de porcentagem
+
+
+        //exercicio 6 - ler salario mensal atual de um funcionario e o percentual de reajuste
+        //calcular e escrever o valor do salario ajustado
+
+        public double Reajuste(double salario, double reajuste)
+        {
+            return ((reajuste / 100) * salario) + salario;
         }
 
+        //metodo de validaçao
+        public Boolean ValidarMaiorZero(double num)
+        {
+            if (num <= 0)
+            {
+                return true;
+            }
+                return false; 
+        }
+
+        //exercicio 7 - 
 
 
 

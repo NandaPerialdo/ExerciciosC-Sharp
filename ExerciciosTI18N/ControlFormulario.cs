@@ -37,6 +37,9 @@ namespace ExerciciosTI18N
                                "4.exercicio 4\n" +
                                "5.exercicio 5\n" +
                                "6.exercicio 6\n" +
+                               "7.exercicio 7\n" +
+                               "8.exercicio 8\n" +
+                               "9.exercicio 9\n" +
                                "escolha uma das opcoes acima: ");
             ConsultarOpcao = Convert.ToInt32(Console.ReadLine());
         }// mostrar menu
@@ -102,36 +105,163 @@ namespace ExerciciosTI18N
                         Console.WriteLine("O antecessor é" + exercicio.Antecessor(num));
                         break;
                     case 4:
-                        Console.WriteLine("informe a altura do retangulo");
-                        double altura = Convert.ToDouble(Console.ReadLine());
+                        double altura;
+                        double largura;
+                        do { 
+                        
+                            Console.WriteLine("informe a altura do retangulo");
+                            altura = Convert.ToDouble(Console.ReadLine());
+                            if (altura < 0)  
+                            {
+                                Console.WriteLine("Erro, insira um numero maior que zero");
+                            }
+                        } while (altura > 0);
 
-                        Console.WriteLine("Informe a largura do retangulo");
-                        double largura = Convert.ToDouble(Console.ReadLine());
+                        do {  
+                        
+                            Console.WriteLine("Informe a largura do retangulo");
+                            largura = Convert.ToDouble(Console.ReadLine());
+                            if (largura < 0)
+                            {
+                                Console.WriteLine("Erro, insira um valor maior que zero");
+                            }
 
-                        //mostrar resultado
+                        } while (largura > 0);
+                        
+                        //exibir resultado    
                         Console.WriteLine("A area do retangulo é" + exercicio.Area(altura, largura));
                         break;
                     case 5:
                         //coletando dados que serão usados no metodo e guardando em variaveis locais
-                        Console.WriteLine("insira o total de eleitores");
-                        int total = Convert.ToInt32(Console.ReadLine());
+                        //declarando variaveis
+                        double total;
+                        double qtNulos;
+                        double qtBrancos;
+                        double qtValidos;
+                        
+                        
+                            do {//entrada e validação de total de votos
+                                Console.WriteLine("insira o total de eleitores");
+                                total = Convert.ToInt32(Console.ReadLine());
 
-                        Console.WriteLine("insira a quantidade de votos nulos: ");
-                        int qtNulos = Convert.ToInt32(Console.ReadLine());
+                                if (total <= 0) 
+                                {
+                                    Console.WriteLine("Erro, insira um total de eleitores maior que zero");
+                                }
+                            } while (total <= 0);
 
-                        Console.WriteLine("Insira a quantidade de votos brancos: ");
-                        int qtBrancos = Convert.ToInt32(Console.ReadLine());
+                            do {//entrada e validacao de votos nulos
+                                Console.WriteLine("insira a quantidade de votos nulos: ");
+                                qtNulos = Convert.ToInt32(Console.ReadLine());
 
-                        Console.WriteLine("Insira a quantidade de votos válidos");
-                        int qtValidos = Convert.ToInt32(Console.ReadLine());
+                                if(qtNulos < 0)
+                                {
+                                    Console.WriteLine("Erro, os votos nao podem ser negativos");
+                                }
+                            } while (qtNulos <= 0);
 
-                        //mostrando resultado, calculado a partir do metodo PercentualVotos criado na aba ModelExercicio
-                        Console.WriteLine("O percuntual de votos nulos é: " + exercicio.PercentualVotos(total, qtNulos));
+                            do { // entrada e validacao de votos brancos
+                                Console.WriteLine("Insira a quantidade de votos brancos: ");
+                                qtBrancos = Convert.ToInt32(Console.ReadLine());
 
-                        Console.WriteLine("O percuntual de votos nulos é: " + exercicio.PercentualVotos(total, qtBrancos));
+                                if (qtBrancos < 0)
+                                {
+                                    Console.WriteLine("Erro, os votos nao podem ser negativos");
+                                }
+                            }while (qtBrancos <= 0);
 
-                        Console.WriteLine("O percuntual de votos nulos é: " + exercicio.PercentualVotos(total, qtValidos));
+                            do
+                            { // entrada e validacao de votos validos
+                                Console.WriteLine("Insira a quantidade de votos válidos");
+                                qtValidos = Convert.ToInt32(Console.ReadLine());
+
+                                if (qtValidos < 0)
+                                {
+                                    Console.WriteLine("Erro, os votos nao podem ser negativos");
+                                }
+                            }while (qtValidos <= 0);
+
+                        //validando se a soma de votos nulos, validos e brancos, batem com o total de eleitores   
+                            if (qtNulos + qtBrancos + qtValidos == total)
+                            {
+                                //mostrando resultado, calculado a partir do metodo PercentualVotos criado na aba ModelExercicio
+                                Console.WriteLine("O percentual de votos nulos é: " + exercicio.PercentualVotos(total, qtNulos) + "%");
+                                Console.WriteLine("O percentual de votos nulos é: " + exercicio.PercentualVotos(total, qtBrancos) + "%");
+                                Console.WriteLine("O percentual de votos nulos é: " + exercicio.PercentualVotos(total, qtValidos) + "%");
+                            }
+                            else
+                            {
+                                Console.WriteLine("A soma de votos nulos, brancos e validos deve ser igual ao total de votos");
+                            }
+                           break;
+                    case 6:
+                        //declarando variaveis
+                        double salario;
+                        double reajuste;
+                        //coletando dados e validando, usando um metodo de validaçao criado em model
+                        do
+                        {
+                            Console.WriteLine("Insira o salario");
+                            salario = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.ValidarMaiorZero(salario) == true)
+                            {
+                                Console.WriteLine("Erro! O salario precisa ser positivo maior que zero");
+                            }
+                        } while (exercicio.ValidarMaiorZero(salario) == true);
+
+                        do
+                        {
+                            Console.WriteLine("Insira o reajuste");
+                            reajuste = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.ValidarMaiorZero(reajuste) == true)
+                            {
+                                Console.WriteLine("Erro!o porcentual precisa ser positivo maior que zero");
+                            }
+                        } while (exercicio.ValidarMaiorZero(reajuste) == true);
+
+                        Console.WriteLine("O salário com reajuste é igual a: " + (exercicio.Reajuste(salario, reajuste)));
+                            break;
+                        case 7:
+                        double custo;
+                        double pImposto;
+                        double pDistribuidor;
+
+                        do
+                        {
+                            Console.WriteLine("Insira o valor do custo de fábrica do carro");
+                            custo = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.ValidarMaiorZero(custo) == true)
+                            {
+                                Console.WriteLine("Erro, o custo de fabrica precisa ser positivo e maior que zero");
+                            }
+                        } while (exercicio.ValidarMaiorZero(custo) == true);
+
+                        do
+                        {
+                            Console.WriteLine("Insira a porcentagem de Impostos");
+                            pImposto = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.ValidarMaiorZero(pImposto) == true)
+                            {
+                                Console.WriteLine("Erro, a porcentagem precisa ser maior que zero");
+                            }
+                        } while (exercicio.ValidarMaiorZero(pImposto) == true);
+
+                        do
+                        {
+                            Console.WriteLine("Insira a porcentagem do distribuidor");
+                            pDistribuidor = Convert.ToDouble(ConsoleReadLine());
+                            if (exercicio.ValidarMaiorZero(pDistribuidor) == true);
+                            {
+                                Console
+
+                            }
+
+
+
+                        }
+
                         break;
+
                 }//fim do escolha
             } while (ConsultarOpcao != 0);//fim do while
         }//fim do metodo

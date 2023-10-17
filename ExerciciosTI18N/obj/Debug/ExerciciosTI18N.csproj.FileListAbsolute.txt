@@ -13,3 +13,11 @@ C:\Users\nanda\Source\Repos\ExerciciosC-Sharp\ExerciciosTI18N\obj\Debug\Exercici
 C:\Users\nanda\Source\Repos\ExerciciosC-Sharp\ExerciciosTI18N\obj\Debug\ExerciciosTI18N.csproj.CoreCompileInputs.cache
 C:\Users\nanda\Source\Repos\ExerciciosC-Sharp\ExerciciosTI18N\obj\Debug\ExerciciosTI18N.exe
 C:\Users\nanda\Source\Repos\ExerciciosC-Sharp\ExerciciosTI18N\obj\Debug\ExerciciosTI18N.pdb
+C:\Users\fernanda.palves3\source\repos\ExerciciosC-Sharp\ExerciciosC-Sharp\ExerciciosTI18N\bin\Debug\ExerciciosTI18N.exe.config
+C:\Users\fernanda.palves3\source\repos\ExerciciosC-Sharp\ExerciciosC-Sharp\ExerciciosTI18N\bin\Debug\ExerciciosTI18N.exe
+C:\Users\fernanda.palves3\source\repos\ExerciciosC-Sharp\ExerciciosC-Sharp\ExerciciosTI18N\bin\Debug\ExerciciosTI18N.pdb
+C:\Users\fernanda.palves3\source\repos\ExerciciosC-Sharp\ExerciciosC-Sharp\ExerciciosTI18N\obj\Debug\ExerciciosTI18N.csproj.AssemblyReference.cache
+C:\Users\fernanda.palves3\source\repos\ExerciciosC-Sharp\ExerciciosC-Sharp\ExerciciosTI18N\obj\Debug\ExerciciosTI18N.csproj.SuggestedBindingRedirects.cache
+C:\Users\fernanda.palves3\source\repos\ExerciciosC-Sharp\ExerciciosC-Sharp\ExerciciosTI18N\obj\Debug\ExerciciosTI18N.csproj.CoreCompileInputs.cache
+C:\Users\fernanda.palves3\source\repos\ExerciciosC-Sharp\ExerciciosC-Sharp\ExerciciosTI18N\obj\Debug\ExerciciosTI18N.exe
+C:\Users\fernanda.palves3\source\repos\ExerciciosC-Sharp\ExerciciosC-Sharp\ExerciciosTI18N\obj\Debug\ExerciciosTI18N.pdb
