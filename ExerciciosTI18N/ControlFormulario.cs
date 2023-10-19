@@ -56,7 +56,7 @@ namespace ExerciciosTI18N
                     case 0:
                         Console.WriteLine("Obrigado");
                         break;
-                    case 1:
+                    case 1://exercicio 1
                         double nota1;//declarei do lado de fora, intanciou cm zero pra dps pedir p guardar a nota, assim while enxerga avaria que esta dentro
                         double nota2;
                         do
@@ -86,6 +86,7 @@ namespace ExerciciosTI18N
                         Console.WriteLine("a media das notas digitadas é" + exercicio.MediaDuasNotas(nota1, nota2));//chamar o metodo mencionando a variavel que representa a classe modelexrcicio (dessa forma acessamos todos os metodos da model), dps passando as variaveis coletdas como parametro no metodo
                         break;
                     case 2:
+                        //exercicio 2
                         Console.WriteLine("infome um numero");
                         int num1 = Convert.ToInt32(Console.ReadLine());
 
@@ -99,12 +100,39 @@ namespace ExerciciosTI18N
                         Console.WriteLine("opcao escolhida nao é valida");
                         break;
                     case 3:
+
+
+                        break;
+                    case 4:
+                        int idCor;
+                        //exibindo menu e coletando numero correspondente a cor que deseja ser consultada
+                        do
+                        {
+                            Console.WriteLine("Digite o numero da cor que deseja consultar:\n" +
+                                              "1.Verde\n" +
+                                              "2.Azul\n" +
+                                              "3.Amarelo\n" +
+                                              "4.Vermelho\n");
+                            idCor = Convert.ToInt32(Console.ReadLine());
+                            if (exercicio.ValidarCor(idCor) == true)
+                            {
+                                Console.WriteLine("Erro, insira um numero entre 1 e 4");
+                            }
+                        } while (exercicio.ValidarCor(idCor) == true);
+
+                        Console.WriteLine("O preço dessa categoria é: R$ " + exercicio.PrecoCd(idCor));
+
+
+                        break;
+                    case 5:
+                        //exercicio 5
                         Console.WriteLine("Informe um numero");
                         int num = Convert.ToInt32(Console.ReadLine());
                         //mostrar resultado
                         Console.WriteLine("O antecessor é" + exercicio.Antecessor(num));
                         break;
-                    case 4:
+                    case 6:
+                        //exercicio 6
                         double altura;
                         double largura;
                         do { 
@@ -131,7 +159,8 @@ namespace ExerciciosTI18N
                         //exibir resultado    
                         Console.WriteLine("A area do retangulo é" + exercicio.Area(altura, largura));
                         break;
-                    case 5:
+                    case 7:
+                        //exercicio 7
                         //coletando dados que serão usados no metodo e guardando em variaveis locais
                         //declarando variaveis
                         double total;
@@ -194,7 +223,8 @@ namespace ExerciciosTI18N
                                 Console.WriteLine("A soma de votos nulos, brancos e validos deve ser igual ao total de votos");
                             }
                            break;
-                    case 6:
+                    case 8:
+                        //exercicio 8
                         //declarando variaveis
                         double salario;
                         double reajuste;
@@ -221,12 +251,14 @@ namespace ExerciciosTI18N
 
                         Console.WriteLine("O salário com reajuste é igual a: " + (exercicio.Reajuste(salario, reajuste)));
                             break;
-                        case 7:
+                    case 9://exercicio 9
+                        //declarando as variaveis
                         double custo;
                         double pImposto;
                         double pDistribuidor;
 
-                        do
+                        do//coletando e validando o custo (validacão a partir do metodo VaidarMaiorZero, que retorna true sempre
+                            //que o valor que entra em custo é menor ou igual a zero
                         {
                             Console.WriteLine("Insira o valor do custo de fábrica do carro");
                             custo = Convert.ToDouble(Console.ReadLine());
@@ -236,7 +268,7 @@ namespace ExerciciosTI18N
                             }
                         } while (exercicio.ValidarMaiorZero(custo) == true);
 
-                        do
+                        do//coletando e validando pimposto
                         {
                             Console.WriteLine("Insira a porcentagem de Impostos");
                             pImposto = Convert.ToDouble(Console.ReadLine());
@@ -246,22 +278,80 @@ namespace ExerciciosTI18N
                             }
                         } while (exercicio.ValidarMaiorZero(pImposto) == true);
 
-                        do
+                        do//coletando a validando pdistribuidor
                         {
                             Console.WriteLine("Insira a porcentagem do distribuidor");
-                            pDistribuidor = Convert.ToDouble(ConsoleReadLine());
-                            if (exercicio.ValidarMaiorZero(pDistribuidor) == true);
+                            pDistribuidor = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.ValidarMaiorZero(pDistribuidor) == true)
                             {
-                                Console
-
+                                Console.WriteLine("Erro, a porcentagem precisa ser maior que zero");
                             }
+                        } while (exercicio.ValidarMaiorZero(pDistribuidor) == true);
 
+                        //calculando e exibindo o valor do carro usando o metodo ValorCarro com a regra de negocio criado em modelexercicio 
+                        Console.WriteLine("O valor do carro ao consumidor é: " + exercicio.ValorCarro(custo, pDistribuidor, pImposto));
+                            break;
+                    case 10://exercicio 10
+                        //declarar variaveis que serao usadas
+                        double salarioV;
+                        double valorCarro;
+                        double carrosVendidos;
+                        double comissao;
+                        double totalVendas;
 
+                        do//coletando salario e validando, usando metodo de validacao validarmaiorzero
+                        {
+                            Console.WriteLine("Insira o salario do vendedor:");
+                            salarioV = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.ValidarMaiorZero(salarioV) == true)
+                            {
+                                Console.WriteLine("Erro, o salario precisa ser maior que zero");
+                            }
+                        } while (exercicio.ValidarMaiorZero(salarioV) == true);
 
-                        }
+                        do//coletando valor total de vendas em dinheiro e validando para que seja positivo, usando metodo validado ValidarPositivo, cirado na model
+                        {
+                            Console.WriteLine("Insira o VALOR(R$) total de vendas do funcionário");
+                            totalVendas = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.ValidarPositivo(totalVendas) == true)
+                            {
+                                Console.WriteLine("Erro! O valor total de vendas nao pode ser negativo");
+                            }
+                        } while (exercicio.ValidarPositivo(totalVendas) == true);
 
+                        do//coletando a quantidade de carros vendidos e validando para que nao sejam negativos usando o metodo validar positivo criado na model
+                        {
+                            Console.WriteLine("Insira a quantidade de carros vendidos");
+                            carrosVendidos = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.ValidarPositivo(carrosVendidos) == true)
+                            {
+                                Console.WriteLine("Erro, a quantidade de carros vendidos nao pode ser negativa");
+                            }
+                        } while (exercicio.ValidarPositivo(carrosVendidos) == true);
+
+                        do//coletando o valor recebido por carro vendido e validando para que seja positivo
+                        {
+                            Console.WriteLine("Insira o valor recebido por carro vendido");
+                            valorCarro = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.ValidarPositivo(valorCarro) == true)
+                            {
+                                Console.WriteLine("Erro, o valor recebido por carro vendido nao pode ser negativo");
+                            }
+                        } while (exercicio.ValidarPositivo(valorCarro) == true);
+
+                        do//coletando o porcentual de comissao e validando para que nao seja negativo
+                        {
+                            Console.WriteLine("Insira o percentual de comissao para o funcionario:");
+                            comissao = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.ValidarPositivo(comissao) == true)
+                            {
+                                Console.WriteLine("Erro, o porcentual de comissao nao pode ser negativo");
+                            }
+                        } while (exercicio.ValidarPositivo(comissao) == true);
+
+                        //realizando calculo a partir do metodo criado na model e exibindo na tela
+                        Console.WriteLine("O salário final do vendedor é:" + exercicio.SalarioVendedor(salarioV, valorCarro, carrosVendidos, comissao, totalVendas));
                         break;
-
                 }//fim do escolha
             } while (ConsultarOpcao != 0);//fim do while
         }//fim do metodo
