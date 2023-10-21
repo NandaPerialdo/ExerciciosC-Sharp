@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ExerciciosTI18N
 {
@@ -77,17 +79,7 @@ namespace ExerciciosTI18N
         }
 
         //retornar situacao do aluno
-        public Boolean SituacaoALuno(double media)
-        {
-            if (media < 5)
-            {
-                return true;
-            }
-            if (media < 7)
-            {
-                return false;
-            }
-        }
+        
 
 
 
@@ -206,6 +198,68 @@ namespace ExerciciosTI18N
             }
             return false;
         }//fim do metodo validarpositivo
+
+        //exercicio 11 - Escreva um programa que verifica se um número é par ou ímpar e exibe a mensagem apropriada.
+
+        public Boolean CalcularImpar (double num)
+        {
+            if (num%2 > 0)
+            {
+                return true;
+            }
+                return false;
+        }//fim do metodo calcular impar
+
+        //exercicio 12 - Crie um programa que recebe a idade de uma pessoa e determina se
+        //ela é maior de idade(idade >= 18) ou menor de idade(idade< 18).
+
+        public Boolean CalcMenorIdade (double idade)
+        {
+            if (idade < 18)
+            {
+                return true;
+            }
+                return false;
+        }
+
+        //exercicio 13 - Desenvolva um programa que pede ao usuário para digitar três números e exiba o maior deles.
+
+        //exercicio 14 - Faça um programa que verifica se um ano é bissexto.
+        //Um ano bissexto é divisível por 4, exceto os anos que são divisíveis por 100, a menos que sejam divisíveis por 400.
+
+        //exercicio 15 - Escreva um programa que recebe as notas de um aluno em duas provas e calcula a média.
+        //Se a média for maior ou igual a 7, o programa deve exibir "Aprovado"; caso contrário, deve exibir "Reprovado".
+
+        public Boolean SituacaoAluno (double notaFinal)
+        {
+            if (notaFinal < 7)
+            {
+                return true;//se reprovado
+            }
+            else
+            {
+                return false;//se aprovado
+            }
+        }//fim metodo situaçaoaluno
+
+        //exercicio 16 - Crie um programa que determine se um triângulo é equilátero (todos os lados iguais),
+        //isósceles (dois lados iguais)
+        //ou escaleno (todos os lados diferentes) com base nos valores dos lados informados pelo usuário.
+
+        //exercicio 17 - Desenvolva um programa que peça ao usuário para inserir um número e, em seguida,
+        //exiba se o número é positivo, negativo ou zero.
+
+        public Boolean Validar(double n)
+        {
+            if (n < 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //exercicio 18 - Faça um programa que recebe um mês (em formato numérico) e exibe o número
+        //de dias que ele tem. Lembre-se de lidar com anos bissextos.
 
 
 
